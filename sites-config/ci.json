@@ -4,12 +4,20 @@
       {
         "root": "dist",
         "pattern": "assets/**/*"
+      },
+      {
+        "root": "dist",
+        "pattern": "modules/**/*"
+      },
+      {
+        "root": "dist/public_assets",
+        "pattern": "**/*"
       }
     ],
     "features": "sites-config/features.json",
     "plugins": [
       {
-        "pluginName": "Generator",
+        "pluginName": "PagesGenerator",
         "sourceFiles": [
           {
             "root": "dist/plugin",
@@ -17,11 +25,11 @@
           },
           {
             "root": "dist",
-            "pattern": "assets/{server,static,renderer}/**/*{.js,.css}"
+            "pattern": "assets/{server,static,renderer,render,client}/**/*{.js,.css}"
           }
         ],
         "event": "ON_PAGE_GENERATE",
-        "functionName": "Generate"
+        "functionName": "PagesGenerator"
       }
     ]
   },
